@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "boraaks-bcac"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "boraaks-bcac"
+  template:
+    metadata:
+      labels:
+        app: "boraaks-bcac"
+    spec:
+      containers:
+        - name: "boraaks-bcac"
+          image: "borareggg.azurecr.io/boraaks"
+          ports:
+          - containerPort: 80
